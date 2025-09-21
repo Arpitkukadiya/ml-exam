@@ -1,140 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>📘 ML Assignments - likha hona cahi ye.</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f4f7fb;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(90deg, #4facfe, #00f2fe);
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    header p {
-      font-size: 14px;
-      margin: 5px 0 0;
-      font-weight: normal;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 10px;
-    }
-    section.assignment {
-      background: #fff;
-      margin-bottom: 25px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      animation: fadeIn 0.8s ease;
-    }
-    h2 {
-      color: #0056b3;
-      margin-top: 0;
-    }
-    .question {
-      font-weight: bold;
-      margin: 10px 0 5px;
-    }
-    .answer {
-      margin: 5px 0 15px;
-      padding-left: 10px;
-      border-left: 3px solid #0056b3;
-    }
-    pre {
-      background: #1e1e1e;
-      color: #dcdcdc;
-      padding: 15px;
-      border-radius: 6px;
-      overflow-x: auto;
-      position: relative;
-    }
-    button.copy-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: #007bff;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      font-size: 12px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button.copy-btn:hover {
-      background: #0056b3;
-    }
-    button.download-btn {
-      display: block;
-      margin: 30px auto;
-      padding: 12px 25px;
-      font-size: 16px;
-      background: #28a745;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button.download-btn:hover {
-      background: #1e7e34;
-    }
-    @keyframes fadeIn {
-      from {opacity:0; transform:translateY(20px);}
-      to {opacity:1; transform:translateY(0);}
-    }
-  </style>
+<meta charset="UTF-8">
+<title>📘 ML Assignments - Modern UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* Global Styles */
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f3f7, #d9e2ec);
+    color: #333;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(90deg,#667eea,#764ba2);
+    color: #fff;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    position: sticky;
+    top:0;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+  header p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .search-bar input {
+    width: 50%;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  .search-bar input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 10px rgba(102,126,234,0.3);
+    outline: none;
+  }
+
+  /* Assignment Card */
+  section.assignment {
+    background: #fff;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  section.assignment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  }
+
+  /* Assignment Title */
+  h2 {
+    color: #764ba2;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  /* Questions & Answers */
+  .question {
+    font-weight: 600;
+    margin: 12px 0 6px;
+    font-size: 1rem;
+  }
+  .answer {
+    margin: 6px 0 15px;
+    padding-left: 12px;
+    border-left: 4px solid #667eea;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Code block */
+  pre {
+    background: #1e1e2f;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    position: relative;
+    font-size: 0.9rem;
+  }
+  button.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #667eea;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+  }
+  button.copy-btn:hover {
+    background: #5a67d8;
+  }
+
+  /* Download Button */
+  button.download-btn {
+    display: block;
+    margin: 40px auto;
+    padding: 14px 30px;
+    font-size: 1rem;
+    background: #43d787;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(67,215,135,0.4);
+    transition: all 0.3s ease;
+  }
+  button.download-btn:hover {
+    background: #38b76e;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(56,183,110,0.5);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+  section.assignment { animation: fadeIn 0.8s ease; }
+
+</style>
 </head>
 <body>
-  <header>
-    📘 Machine Learning Assignments 
-    <p><strong>Name:</strong> i love you❤️ | <strong>Enroll:</strong> 🚫 | <strong>Subject:</strong> ML | <strong>Div:</strong> ☠️👻👽</p>
-  </header>
-  <div class="container">
 
-    <!-- Assignment Vehicle Dataset -->
-    <section class="assignment">
-      <h2>Assignment - Vehicle Dataset</h2>
-      <div class="question">Q1: Download a vehicle dataset</div>
-      <div class="answer">Dataset: UCI Machine Learning Repository (Automobile Dataset).</div>
+<header>
+  📘 Machine Learning Assignments
+  <p><strong>Name:</strong> i love you❤️ | <strong>Enroll:</strong> 🚫 | <strong>Subject:</strong> ML | <strong>Div:</strong> ☠️👻👽</p>
+</header>
 
-      <div class="question">Q2: Import it into Google Colab</div>
-      <pre><button class="copy-btn">Copy</button><code>import pandas as pd
+<div class="container">
 
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search assignments..." id="searchInput">
+  </div>
+
+  <!-- Assignment: Vehicle Dataset -->
+  <section class="assignment">
+    <h2>Assignment - Vehicle Dataset</h2>
+    <div class="question">Q1: Download a vehicle dataset</div>
+    <div class="answer">Dataset: UCI Machine Learning Repository (Automobile Dataset).</div>
+    <div class="question">Q2: Import it into Google Colab</div>
+    <pre><button class="copy-btn">Copy</button><code>import pandas as pd
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data"
 df = pd.read_csv(url, header=None)</code></pre>
-
-      <div class="question">Q3: Add the header</div>
-      <pre><button class="copy-btn">Copy</button><code>headers = ["symboling","normalized-losses","make","fuel-type","aspiration",
-           "num-of-doors","body-style","drive-wheels","engine-location","wheel-base",
-           "length","width","height","curb-weight","engine-type","num-of-cylinders",
-           "engine-size","fuel-system","bore","stroke","compression-ratio","horsepower",
-           "peak-rpm","city-mpg","highway-mpg","price"]
+    <div class="question">Q3: Add the header</div>
+    <pre><button class="copy-btn">Copy</button><code>headers = ["symboling","normalized-losses","make","fuel-type","aspiration",
+"num-of-doors","body-style","drive-wheels","engine-location","wheel-base",
+"length","width","height","curb-weight","engine-type","num-of-cylinders",
+"engine-size","fuel-system","bore","stroke","compression-ratio","horsepower",
+"peak-rpm","city-mpg","highway-mpg","price"]
 
 df.columns = headers
 df.head()</code></pre>
-
-      <div class="question">Q4: Replace all missing values with NaN</div>
-      <pre><button class="copy-btn">Copy</button><code>import numpy as np
-
+    <div class="question">Q4: Replace all missing values with NaN</div>
+    <pre><button class="copy-btn">Copy</button><code>import numpy as np
 df.replace("?", np.nan, inplace=True)</code></pre>
-
-      <div class="question">Q5: Identify missing values</div>
-      <pre><button class="copy-btn">Copy</button><code>df.isnull().head()</code></pre>
-
-      <div class="question">Q6: Count missing values in each column</div>
-      <pre><button class="copy-btn">Copy</button><code>df.isnull().sum()</code></pre>
-
-      <div class="question">Q7: Replace values & drop rows with no price</div>
-      <pre><button class="copy-btn">Copy</button><code># Replace 'normalized-losses' with mean
+    <div class="question">Q5: Identify missing values</div>
+    <pre><button class="copy-btn">Copy</button><code>df.isnull().head()</code></pre>
+    <div class="question">Q6: Count missing values in each column</div>
+    <pre><button class="copy-btn">Copy</button><code>df.isnull().sum()</code></pre>
+    <div class="question">Q7: Replace values & drop rows with no price</div>
+    <pre><button class="copy-btn">Copy</button><code># Replace 'normalized-losses' with mean
 df["normalized-losses"] = df["normalized-losses"].astype(float)
 df["normalized-losses"].fillna(df["normalized-losses"].mean(), inplace=True)
 
@@ -143,15 +202,14 @@ df["num-of-doors"].fillna(df["num-of-doors"].mode()[0], inplace=True)
 
 # Drop rows without price
 df.dropna(subset=["price"], inplace=True)</code></pre>
-    </section>
+  </section>
 
-    <!-- Assignment 1 -->
-    <section class="assignment">
-      <h2>Assignment 1</h2>
-      <div class="question">Q1: Download a dataset from Kaggle & Import into Google Colab.</div>
-      <div class="answer"><b>Task:</b> Print top 20 and last 20 records, datatypes, missing values, memory usage.</div>
-      <pre><button class="copy-btn">Copy</button><code>import pandas as pd  
-# Example Dataset
+  <!-- Assignment 1 -->
+  <section class="assignment">
+    <h2>Assignment 1</h2>
+    <div class="question">Q1: Download a dataset from Kaggle & Import into Google Colab.</div>
+    <div class="answer"><b>Task:</b> Print top 20 and last 20 records, datatypes, missing values, memory usage.</div>
+    <pre><button class="copy-btn">Copy</button><code>import pandas as pd  
 data = {
     'EmployeeID': [101, 102, 103, 104, 105],
     'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
@@ -159,50 +217,43 @@ data = {
     'Age': [29, 34, 28, 45, 40],
     'Salary': [50000, 60000, 55000, 70000, 65000]
 }
-
 df = pd.DataFrame(data)
 print("Top 20 Records:\n", df.head(20))
 print("Last 20 Records:\n", df.tail(20))
 print("Data Types:\n", df.dtypes)
 print("Missing Values:\n", df.isnull().sum())
 print("Memory Usage:\n", df.memory_usage(deep=True))</code></pre>
-    </section>
+  </section>
 
-    <!-- Assignment 4 -->
-    <section class="assignment">
-      <h2>Practical Assignment 4</h2>
-      <div class="question">Q1: Split dataset into 70/30 and 80/20.</div>
-      <pre><button class="copy-btn">Copy</button><code>from sklearn.model_selection import train_test_split
+  <!-- Practical Assignment 4 -->
+  <section class="assignment">
+    <h2>Practical Assignment 4</h2>
+    <div class="question">Q1: Split dataset into 70/30 and 80/20.</div>
+    <pre><button class="copy-btn">Copy</button><code>from sklearn.model_selection import train_test_split
 import pandas as pd
-
 data = {
     'Feature1': [1, 2, 3, 4, 5],
     'Feature2': [5, 4, 3, 2, 1],
     'Label': ['A','A','B','B','A']
 }
-
 df = pd.DataFrame(data)
 X = df[['Feature1','Feature2']]
 y = df['Label']
-
 # 70/30 Split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
-
 # 80/20 Split with random_state
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)</code></pre>
-    </section>
+  </section>
 
-    <!-- Assignment 5 -->
-    <section class="assignment">
-      <h2>Assignment 5</h2>
-      <div class="question">Q1: Decision Tree Classifier with metrics.</div>
-      <pre><button class="copy-btn">Copy</button><code>import pandas as pd
+  <!-- Assignment 5 -->
+  <section class="assignment">
+    <h2>Assignment 5</h2>
+    <div class="question">Q1: Decision Tree Classifier with metrics.</div>
+    <pre><button class="copy-btn">Copy</button><code>import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, accuracy_score
-
-# PlayTennis Dataset
 data = {
     'Outlook': ['Sunny','Sunny','Overcast','Rain','Rain','Rain','Overcast','Sunny','Sunny','Rain'],
     'Temperature': ['Hot','Hot','Hot','Mild','Cool','Cool','Cool','Mild','Cool','Mild'],
@@ -210,159 +261,131 @@ data = {
     'Windy': [False, True, False, False, False, True, True, False, False, True],
     'PlayTennis': ['No','No','Yes','Yes','Yes','No','Yes','No','Yes','Yes']
 }
-
 df = pd.DataFrame(data)
-
-# Encode categorical
 le = {}
 for col in df.columns:
     if df[col].dtype == 'object':
         le[col] = LabelEncoder()
         df[col] = le[col].fit_transform(df[col])
-
 X = df.drop(columns=['PlayTennis'])
 y = df['PlayTennis']
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 clf = DecisionTreeClassifier(max_depth=3, random_state=42)
 clf.fit(X_train, y_train)
-
 y_pred = clf.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred, target_names=le['PlayTennis'].classes_))</code></pre>
-    </section>
+  </section>
 
-    <!-- Assignment 6 -->
-    <section class="assignment">
-      <h2>Assignment 6</h2>
-      <div class="question">Q1: Download Iris dataset</div>
-      <div class="answer">Dataset provided by instructor (Iris dataset).</div>
-
-      <div class="question">Q2: Import into Google Colab</div>
-      <div class="answer">Used pandas for dataset handling.</div>
-
-      <div class="question">Q3: Apply one hot encoding</div>
-      <div class="answer">Columns: Purchase, Country (encoded with pd.get_dummies).</div>
-
-      <div class="question">Q4-5: Train-Test Split + Decision Tree & Random Forest</div>
-      <pre><button class="copy-btn">Copy</button><code>import pandas as pd
-
-# Create dataset
+  <!-- Assignment 6 -->
+  <section class="assignment">
+    <h2>Assignment 6</h2>
+    <div class="question">Q1: Download Iris dataset</div>
+    <div class="answer">Dataset provided by instructor (Iris dataset).</div>
+    <div class="question">Q2: Import into Google Colab</div>
+    <div class="answer">Used pandas for dataset handling.</div>
+    <div class="question">Q3: Apply one hot encoding</div>
+    <div class="answer">Columns: Purchase, Country (encoded with pd.get_dummies).</div>
+    <div class="question">Q4-5: Train-Test Split + Decision Tree & Random Forest</div>
+    <pre><button class="copy-btn">Copy</button><code>import pandas as pd
 data = {
     'ID': [1, 2, 3, 4, 5],
     'Color': ['Red', 'Blue', 'Green', 'Red', 'Blue'],
     'Size': ['Small', 'Medium', 'Large', 'Medium', 'Small'],
     'Gender': ['Male', 'Female', 'Female', 'Male', 'Other'],
     'Country': ['India', 'USA', 'Canada', 'India', 'USA'],
-    'Payment_Method': ['Credit Card', 'PayPal', 'Debit Card', 'PayPal', 'Credit Card']
+    'Payment_Method': ['Credit Card', 'PayPal', 'Debit Card', 'PayPal', 'Credit Card'],
+    'Purchase': ['Yes', 'No', 'Yes', 'No', 'Yes']
 }
-
 df = pd.DataFrame(data)
-df_encoded = pd.get_dummies(df, columns=['Color', 'Size', 'Gender','Country', 'Payment_Method'])
-print(df_encoded)</code></pre>
-    </section>
-
-    <!-- Assignment 7 -->
-    <section class="assignment">
-      <h2>Assignment 7</h2>
-      <div class="question">Q1-2: Download dataset + Import</div>
-      <div class="answer">Dataset loaded using pandas (mydataset.csv).</div>
-
-      <div class="question">Q3-6: Apply ML Algorithms & Compare</div>
-      <pre><button class="copy-btn">Copy</button><code>import pandas as pd
+df_encoded = pd.get_dummies(df, columns=['Country','Payment_Method'])
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.neighbors import KNeighborsClassifier
+X = df_encoded.drop('Purchase', axis=1)
+y = df_encoded['Purchase']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+dt = DecisionTreeClassifier()
+rf = RandomForestClassifier()
+dt.fit(X_train, y_train)
+rf.fit(X_train, y_train)
+print("Decision Tree Accuracy:", dt.score(X_test, y_test))
+print("Random Forest Accuracy:", rf.score(X_test, y_test))</code></pre>
+  </section>
 
-# Load dataset
-df = pd.read_csv("mydataset.csv", low_memory=False)
+  <!-- Assignment 7 -->
+  <section class="assignment">
+    <h2>Assignment 7</h2>
+    <div class="question">Q1: Apply Classification algorithms and evaluate metrics</div>
+    <pre><button class="copy-btn">Copy</button><code>from sklearn.metrics import classification_report, confusion_matrix
+y_pred_dt = dt.predict(X_test)
+y_pred_rf = rf.predict(X_test)
+print("Decision Tree Metrics:\n", classification_report(y_test, y_pred_dt))
+print("Random Forest Metrics:\n", classification_report(y_test, y_pred_rf))</code></pre>
+  </section>
 
-# Encode categorical
-le = LabelEncoder()
-for col in df.select_dtypes(include=['object']).columns:
-    df[col] = le.fit_transform(df[col].astype(str))
+  <!-- Practical 3 -->
+  <section class="assignment">
+    <h2>Practical 3</h2>
+    <div class="question">Q1: Download CSV & Import into Google Colab</div>
+    <div class="answer">CSV: Online Retail Dataset</div>
+    <div class="question">Q2: Describe dataset & check missing values</div>
+    <pre><button class="copy-btn">Copy</button><code>import pandas as pd
+df = pd.read_csv('OnlineRetail.csv')
+print(df.describe())
+print(df.isnull().sum())</code></pre>
+    <div class="question">Q3: Handle missing values & encode categorical variables</div>
+    <pre><button class="copy-btn">Copy</button><code>df.fillna(method='ffill', inplace=True)
+df['Country'] = df['Country'].astype('category').cat.codes</code></pre>
+    <div class="question">Q4: Apply Decision Tree & Random Forest</div>
+    <pre><button class="copy-btn">Copy</button><code>from sklearn.model_selection import train_test_split
+X = df.drop('Quantity', axis=1)
+y = df['Quantity']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+dt = DecisionTreeRegressor()
+rf = RandomForestRegressor()
+dt.fit(X_train, y_train)
+rf.fit(X_train, y_train)
+print("Decision Tree Score:", dt.score(X_test, y_test))
+print("Random Forest Score:", rf.score(X_test, y_test))</code></pre>
+  </section>
 
-X = df.drop(['pkSeqID','category'], axis=1)
-y = df['category']
+  <button class="download-btn" onclick="downloadSite()">⬇ Download All Assignments</button>
+</div>
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
-
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
-models = {
-    'KNN': KNeighborsClassifier(),
-    'Decision Tree': DecisionTreeClassifier(random_state=42),
-    'Random Forest': RandomForestClassifier(random_state=42),
-    'SVM': SVC(kernel='rbf', random_state=42),
-    'Logistic Regression': LogisticRegression(max_iter=1000, random_state=42)
-}
-
-scaled_needed = ['KNN','SVM','Logistic Regression']
-results = {}
-
-for name, model in models.items():
-    if name in scaled_needed:
-        model.fit(X_train_scaled, y_train)
-        y_pred = model.predict(X_test_scaled)
-    else:
-        model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)
-    
-    results[name] = {
-        'Confusion Matrix': confusion_matrix(y_test, y_pred),
-        'Accuracy': accuracy_score(y_test, y_pred),
-        'Precision': precision_score(y_test, y_pred, average='weighted'),
-        'Recall': recall_score(y_test, y_pred, average='weighted'),
-        'F1 Score': f1_score(y_test, y_pred, average='weighted')
-    }</code></pre>
-    </section>
-
-    <!-- Practical Assignment 3 -->
-    <section class="assignment">
-      <h2>Practical Assignment 3 (For A1 Only)</h2>
-      <div class="question">Q1-Q7: Handle Missing Values in Profession Dataset</div>
-      <pre><button class="copy-btn">Copy</button><code>import pandas as pd
-
-df = pd.read_csv("profession_dataset.csv")
-print(df.isnull().sum())
-
-df['Profession'].fillna(df['Profession'].mode()[0], inplace=True)
-df['Published Papers'].fillna(df['Published Papers'].mean(), inplace=True)
-df['Gender'].fillna(df['Gender'].mode()[0], inplace=True)
-df = df.dropna(subset=['Experience Years'])
-df['Rating'].fillna(df['Rating'].mean(), inplace=True)
-
-print(df.head())</code></pre>
-    </section>
-
-    <button class="download-btn" onclick="downloadSite()">⬇ Download All Assignments</button>
-  </div>
-
-  <script>
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const code = this.nextElementSibling.innerText;
-        navigator.clipboard.writeText(code).then(() => {
-          this.textContent = "Copied!";
-          setTimeout(() => this.textContent = "Copy", 2000);
-        });
+<script>
+  // Copy Code
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const code = this.nextElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        this.textContent = "Copied!";
+        setTimeout(() => this.textContent = "Copy", 2000);
       });
     });
+  });
 
-    function downloadSite() {
-      const blob = new Blob([document.documentElement.outerHTML], {type: "text/html"});
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "Kiran_Mojidra_ML_Assignments.html";
-      a.click();
-    }
-  </script>
+  // Download HTML
+  function downloadSite() {
+    const blob = new Blob([document.documentElement.outerHTML], {type: "text/html"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "ML_Assignments_Modern.html";
+    a.click();
+  }
+
+  // Search Functionality
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    document.querySelectorAll('.assignment').forEach(section => {
+      const text = section.innerText.toLowerCase();
+      section.style.display = text.includes(query) ? 'block' : 'none';
+    });
+  });
+</script>
+
 </body>
 </html>
