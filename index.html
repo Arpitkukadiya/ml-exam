@@ -353,6 +353,7 @@ print("Random Forest Score:", rf.score(X_test, y_test))</code></pre>
   </section>
 
   <button class="download-btn" onclick="downloadSite()">⬇ Download All Assignments</button>
+  <button class="download-btn" onclick="downloadCodes()">⬇ Download All Codes (Text File)</button>
 </div>
 
 <script>
@@ -373,6 +374,30 @@ print("Random Forest Score:", rf.score(X_test, y_test))</code></pre>
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "ML_Assignments_Modern.html";
+    a.click();
+  }
+
+  // Download all codes in TXT
+  function downloadCodes() {
+    const sections = document.querySelectorAll('section.assignment');
+    let textContent = "";
+
+    sections.forEach(sec => {
+      const title = sec.querySelector('h2')?.innerText || "Assignment";
+      const codes = sec.querySelectorAll('pre code');
+      if (codes.length > 0) {
+        textContent += title + "\n" + "-".repeat(50) + "\n";
+        codes.forEach(codeBlock => {
+          textContent += codeBlock.innerText + "\n\n";
+        });
+        textContent += "=".repeat(70) + "\n\n";
+      }
+    });
+
+    const blob = new Blob([textContent], {type: "text/plain"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "ML_Assignments_Codes.txt";
     a.click();
   }
 
